@@ -19,8 +19,7 @@ class TPQueue {
     const T& pop() {
         if (isEmpty()) {
             throw std::string("Empty");
-        }
-        else {
+        } else {
             count--;
             return arr[first++ % size];
         }
@@ -28,8 +27,7 @@ class TPQueue {
     void push(const T& value) {
         if (isFull()) {
             throw std::string("Full");
-        }
-        else {
+        } else {
             int x = last;
             arr[last % size] = value;
             T temp = arr[x % size];
