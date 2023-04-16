@@ -5,10 +5,10 @@
 
 template<typename T, int size>
 class TPQueue {
-  private:
+   private:
     T* arr;
     int last, first, count;
-public:
+   public:
     TPQueue() :first(0), last(0), count(0) { arr = new T[size]; }
     bool isEmpty() const {
         return 0 == count;
@@ -18,7 +18,7 @@ public:
     }
     const T& pop() {
         if (isEmpty()) {
-            throw std::string("empty!");
+            throw std::string("Empty");
         }
         else {
             count--;
@@ -33,7 +33,8 @@ public:
             int x = last;
             arr[last % size] = value;
             T temp = arr[x % size];
-            while (arr[x % size].prior > arr[(x - 1) % size].prior && x > first) {
+            while (arr[x % size].prior > \
+              arr[(x - 1) % size].prior && x > first) {
                 temp = arr[x % size];
                 arr[x % size] = arr[(x - 1) % size];
                 arr[(x - 1) % size] = temp;
